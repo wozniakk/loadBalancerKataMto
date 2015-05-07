@@ -12,5 +12,4 @@ public class ServerLoadBalancerTest {
 		assertThat(true, equalTo(true));
 	}
 
-
 }
