@@ -1,5 +1,7 @@
 package edu.iis.mto.serverloadbalancer;
 
+import org.hamcrest.Matcher;
+
 public class Server {
 
 	private int capacity;
@@ -11,6 +13,11 @@ public class Server {
 
 	public Server withCapacity(int i) {
 		return this;
+	}
+
+	public Matcher<? super String> contains(Vm vm) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

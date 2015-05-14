@@ -25,6 +25,33 @@ public class ServerLoadBalancerTest {
 		
 	}
 
+	@Test
+	public void oneServer_oneVm_fillsAllServerCapacity() {
+		
+		Server server = a(server().withCapacity(1));
+		
+		Vm vm = a(vm().withSize(1));
+		
+		balance(aListOfServersContains(server), aListOfVmsWith(vm));
+		
+		assertThat(server, hasLoadPercentage(1.0d));
+		assertThat("server should contains vm", server.contains(vm));
+		
+	}
+	
+	private Vm[] aListOfVmsWith(Vm vm) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private Vm a(VmBuilder withSize) {
+		return null;
+	}
+
+	private VmBuilder vm() {
+		return new VmBuilder();
+	}
+
 	private Server a(ServerBuilder builder) {
 		return builder.build();
 	}
