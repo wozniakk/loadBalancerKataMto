@@ -4,6 +4,7 @@ import static edu.iis.mto.serverloadbalancer.CurrentLoadPercentageMatcher.hasLoa
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static edu.iis.mto.serverloadbalancer.ServerBuilder.server;
+import static edu.iis.mto.serverloadbalancer.VmBuilder.vm;
 
 import org.junit.Test;
 
@@ -45,10 +46,6 @@ public class ServerLoadBalancerTest {
 
 	private Vm a(VmBuilder builder) {
 		return builder.build();
-	}
-
-	private VmBuilder vm() {
-		return new VmBuilder();
 	}
 
 	private Server a(ServerBuilder builder) {

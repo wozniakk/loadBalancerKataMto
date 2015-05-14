@@ -13,4 +13,8 @@ public class VmBuilder {
 		return new Vm(size);
 	}
 
+	public static VmBuilder vm() {
+		return new VmBuilder();
+	}
+	
 }
