@@ -3,7 +3,7 @@ package edu.iis.mto.serverloadbalancer;
 
 public class Server {
 
-	private int capacity;
+	int capacity;
 	public double currentLoadPecentage;
 	
 	public Server(int capacity) {
