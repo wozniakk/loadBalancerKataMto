@@ -9,8 +9,8 @@ public class Server {
 		this.capacity = capacity;
 	}
 
-	public Object withCapacity(int i) {
-		return null;
+	public Server withCapacity(int i) {
+		return this;
 	}
 
 }
