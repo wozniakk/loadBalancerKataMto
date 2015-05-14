@@ -40,6 +40,18 @@ public class ServerLoadBalancerTest {
 		
 	}
 	
+	@Test
+	public void oneServer_oneVm_shouldFillHalfOfTheServerSpace() {
+		
+		Server server = a(server().withCapacity(2));
+		Vm vm = a(vm().withSize(1));
+		balance(aListOfServersContains(server), aListOfVmsWith(vm));
+		
+		assertThat(server, hasLoadPercentage(50.0d));
+		assertThat("server should contsain vm", server.contains(vm));
+		
+	}
+	
 	private Vm[] aListOfVmsWith(Vm vm) {
 		return new Vm[]{ vm };
 	}
