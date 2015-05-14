@@ -1,12 +1,17 @@
 package edu.iis.mto.serverloadbalancer;
 
 import org.hamcrest.Description;
+import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
 
 public class CurrentLoadPercentageMatcher extends TypeSafeMatcher<Server> {
 	
 	private double expectedLoadPercentage;
 
+	public static Matcher<? super Server> hasLoadPercentage(double expectedLoadPercentage) {
+		return new CurrentLoadPercentageMatcher(expectedLoadPercentage);
+	}
+	
 	public CurrentLoadPercentageMatcher(double expectedLoadPercentage) {
 		this.expectedLoadPercentage = expectedLoadPercentage;
 	}
