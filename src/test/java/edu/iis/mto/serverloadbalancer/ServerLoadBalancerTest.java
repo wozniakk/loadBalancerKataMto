@@ -34,18 +34,17 @@ public class ServerLoadBalancerTest {
 		
 		balance(aListOfServersContains(server), aListOfVmsWith(vm));
 		
-		assertThat(server, hasLoadPercentage(1.0d));
+		assertThat(server, hasLoadPercentage(100.0d));
 		assertThat("server should contains vm", server.contains(vm));
 		
 	}
 	
 	private Vm[] aListOfVmsWith(Vm vm) {
-		// TODO Auto-generated method stub
-		return null;
+		return new Vm[]{ vm };
 	}
 
-	private Vm a(VmBuilder withSize) {
-		return null;
+	private Vm a(VmBuilder builder) {
+		return builder.build();
 	}
 
 	private VmBuilder vm() {

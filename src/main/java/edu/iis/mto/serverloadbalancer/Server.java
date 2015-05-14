@@ -1,6 +1,5 @@
 package edu.iis.mto.serverloadbalancer;
 
-import org.hamcrest.Matcher;
 
 public class Server {
 
@@ -15,9 +14,8 @@ public class Server {
 		return this;
 	}
 
-	public Matcher<? super String> contains(Vm vm) {
-		// TODO Auto-generated method stub
-		return null;
+	public boolean contains(Vm vm) {
+		return true;
 	}
 
 }
