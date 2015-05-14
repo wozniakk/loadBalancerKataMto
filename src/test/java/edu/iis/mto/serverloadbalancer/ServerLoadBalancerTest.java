@@ -24,28 +24,28 @@ public class ServerLoadBalancerTest {
 		
 	}
 
-	private void balance(Object aListOfServersWith, Object anEmptyListOfVms) {
-		
+	private void balance(Server[] aListOfServersWith, Vm[] anEmptyListOfVms) {
+		new ServerLoadBalancer().balance(aListOfServersWith, anEmptyListOfVms);
 	}
 
-	private Matcher<? super Server> hasLoadPercentage(double d) {
-		return null;
+	private Matcher<? super Server> hasLoadPercentage(double expectedLoadPercentage) {
+		return new CurrentLoadPercentageMatcher(expectedLoadPercentage);
 	}
 
-	private Object anEmptyListOfVms() {
-		return null;
+	private Vm[] anEmptyListOfVms() {
+		return new Vm[]{};
 	}
 
-	private Object aListOfServersWith(Server server) {
-		return null;
+	private Server[] aListOfServersWith(Server server) {
+		return new Server[]{ server };
 	}
 
-	private Server a(ServerBuilder withCapacity) {
-		return null;
+	private Server a(ServerBuilder builder) {
+		return builder.build();
 	}
 
 	private ServerBuilder server() {
-		return null;
+		return new ServerBuilder();
 	}
 	
 }
