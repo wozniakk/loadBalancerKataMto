@@ -18,7 +18,7 @@ public class ServerBuilder {
 	}
 
 	public ServerBuilder withCurrentLoadOf(double d) {
-		return null;
+		return this;
 	}
 
 }
