@@ -6,10 +6,14 @@ import java.util.List;
 public class Server {
 
 	public static final double MAXIMUM_LOAD = 100.0d;
-	public double currentLoadPecentage;
+	private double currentLoadPecentage;
 	private int capacity;
 	private List<Vm> vms = new ArrayList<Vm>();
 
+	public double getCurrentLoadPecentage() {
+		return currentLoadPecentage;
+	}
+	
 	public Server(int capacity) {
 		this.capacity = capacity;
 	}
