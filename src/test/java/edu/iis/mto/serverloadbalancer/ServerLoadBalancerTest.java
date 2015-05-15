@@ -92,7 +92,7 @@ public class ServerLoadBalancerTest {
 	@Test
 	public void fewServers_fewVms_shouldAssignEquallyToServers() {
 		
-		Server server1 = a(server().withCapacity(10));
+		Server server1 = a(server().withCapacity(20));
         Server server2 = a(server().withCapacity(20));
         
         Vm vm1 = a(vm().withSize(2));
@@ -105,8 +105,8 @@ public class ServerLoadBalancerTest {
         assertThat("The server 2 should contain the vm 2", server2.contains(vm2));
         assertThat("The server 1 should contain the vm 3", server1.contains(vm3));
         
-        assertThat(server1, hasLoadPercentage(60.0d));
-        assertThat(server2, hasLoadPercentage(40.0d));
+        assertThat(server1, hasLoadPercentage(50.0d));
+        assertThat(server2, hasLoadPercentage(20.0d));
 		
 	}
 	
