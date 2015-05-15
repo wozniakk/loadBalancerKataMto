@@ -78,6 +78,17 @@ public class ServerLoadBalancerTest {
 		
 	}
 	
+	@Test
+	public void oneServer_tooLoadedToAddNewVm() {
+		
+		Server server = a(server().withCapacity(10).withCurrentLoadOf(100.0d));
+		Vm vm = a(vm().withSize(1));
+		
+		balance(aListOfServersWith(server), aListOfVmsWith(vm));
+		assertThat("server should not contain vm", !server.contains(vm));
+		
+	}
+	
 	private Vm a(VmBuilder builder) {
 		return builder.build();
 	}
