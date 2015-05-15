@@ -65,8 +65,8 @@ public class ServerLoadBalancerTest {
 		
 	}
 	
-	private Matcher<? super Server> hasVmsCountOf(int i) {
-		return null;
+	private Matcher<? super Server> hasVmsCountOf(int expectedCount) {
+		return new ServerVmsCountMatcher(expectedCount);
 	}
 
 	private Vm a(VmBuilder builder) {
